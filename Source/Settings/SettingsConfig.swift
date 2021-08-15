@@ -23,6 +23,23 @@ public protocol SettingsConfig {
     var textColor: String { get }
     var selectedColor: String { get }
     var accessoryColor: String { get }
+    var lightGray0: String { get }
+    var lightGray1: String { get }
+    var lightGray2: String { get }
+    var lightGray3: String { get }
+    var middleGray: String { get }
+    var darkGray: String { get }
+    var textDarkGray: String { get }
+    var textBlack: String { get }
+    var midBlueGray: String { get }
+    var iconGrayBlue: String { get }
+    var rotherRed: String { get }
+    var whilePressingRed: String { get }
+    var blue: String { get }
+    var white: String { get }
+    var black: String { get }
+    var gold: String { get }
+    var goldoutline: String { get }
     
     // MARK: Offsets
     var marginBase: Float { get }
@@ -57,6 +74,9 @@ public protocol SettingsConfig {
 
 public extension SettingsConfig {
     // MARK: Colors
+    
+    
+    
     var backgroundColor: String {"ffffff00" }
     var paddingColor: String {"ffffff00" }
     var contentColor: String { "ffffff00" }
@@ -105,6 +125,24 @@ public extension SettingsConfig {
             return UIColor.gray.hexString
         }
     }
+    
+    var lightGray0: String { "#F5F5F5" }
+    var lightGray1: String { "#EDEDED" }
+    var lightGray2: String { "#EBEBEB" }
+    var lightGray3: String { "#C6C6C6" }
+    var middleGray: String { "#A4A4A4" }
+    var darkGray: String { "#7A7A7A" }
+    var textDarkGray: String { "#555555" }
+    var textBlack: String { "#212121" }
+    var midBlueGray: String { "#8F99AC" }
+    var iconGrayBlue: String { "#2B2E41" }
+    var rotherRed: String { "#E30613" }
+    var whilePressingRed: String { "#C01916" }
+    var blue: String { "#347CF6" }
+    var white: String { "#FFFFFF" }
+    var black: String { "#000000" }
+    var gold: String { "#D4AF37" }
+    var goldoutline: String { "#BD9C2F" }
     
     // MARK: Offsets
     var marginBase: Float { 4 }

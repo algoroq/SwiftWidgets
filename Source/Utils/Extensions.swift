@@ -8,6 +8,16 @@
 import Foundation
 import UIKit
 
+extension UIFont {
+    static func customFont(name: String, size: CGFloat) -> UIFont {
+        let font = UIFont(name: name, size: size)
+        assert(font != nil, "Can't load font: \(name)")
+        return font ?? UIFont.systemFont(ofSize: size)
+    }
+    
+    
+}
+
 extension UIColor {
     var alpha: CGFloat {
         var red: CGFloat = 0

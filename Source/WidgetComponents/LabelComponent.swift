@@ -31,6 +31,7 @@ open class LabelComponent: WidgetComponent {
             target.text = text
         } else if let attributedText = model.attributedText {
             target.attributedText = attributedText
+            
         } else if let htmlText = model.htmlText {
             target.attributedText = HtmlParsing.getAttributedStringFromHtml(text: htmlText, font: model.font, textColor: model.color, tintColor: widgetModel.color.tint, textAlignment: model.alignment)
         } else {
@@ -42,7 +43,7 @@ open class LabelComponent: WidgetComponent {
 open class LabelComponentModel {
     public var text: String?
     public var htmlText: String?
-    public var attributedText: NSAttributedString?
+    public var attributedText: NSMutableAttributedString?
     
     public var color: UIColor = UIColor.darkText
     public var alignment: NSTextAlignment = .left

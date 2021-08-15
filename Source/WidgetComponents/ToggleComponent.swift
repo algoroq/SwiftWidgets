@@ -26,7 +26,7 @@ open class ToggleComponent: WidgetComponent {
         self.model = model
         self.widget = widget
         
-        target.onTintColor = widgetModel.color.tint
+        target.onTintColor = Settings.Color.rotherRed
         target.isEnabled = model.isEnabled
         target.setOn(model.isOn, animated: false)
         target.addTarget(self, action: #selector(switchChanged), for: .valueChanged)

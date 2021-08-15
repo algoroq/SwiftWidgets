@@ -48,6 +48,22 @@ public protocol SettingsColor {
     var tabBar: UIColor { get }
     var selected: UIColor { get }
     var accessory: UIColor { get }
+    var lightGray0: UIColor { get }
+    var lightGray1: UIColor { get }
+    var lightGray2: UIColor { get }
+    var lightGray3: UIColor { get }
+    var middleGray: UIColor { get }
+    var textDarkGray: UIColor { get }
+    var textBlack: UIColor { get }
+    var midBlueGray: UIColor { get }
+    var iconGrayBlue: UIColor { get }
+    var rotherRed: UIColor { get }
+    var whilePressingRed: UIColor { get }
+    var blue: UIColor { get }
+    var white: UIColor { get }
+    var black: UIColor { get }
+    var gold: UIColor { get }
+    var goldOutline: UIColor { get }
 }
 
 public protocol SettingsFont {
@@ -133,6 +149,23 @@ public struct SettingsColorDefault: SettingsColor {
     public var tabBar: UIColor { UIColor.from(hexString: conf.tabBarColor) }
     public var selected: UIColor { UIColor.from(hexString: conf.selectedColor) }
     public var accessory: UIColor { UIColor.from(hexString: conf.accessoryColor) }
+    public var lightGray0: UIColor { UIColor.from(hexString: conf.lightGray0) }
+    public var lightGray1: UIColor { UIColor.from(hexString: conf.lightGray1) }
+    public var lightGray2: UIColor { UIColor.from(hexString: conf.lightGray2) }
+    public var lightGray3: UIColor { UIColor.from(hexString: conf.lightGray3) }
+    public var middleGray: UIColor { UIColor.from(hexString: conf.middleGray) }
+    public var textDarkGray: UIColor { UIColor.from(hexString: conf.textDarkGray) }
+    public var textBlack: UIColor { UIColor.from(hexString: conf.textBlack) }
+    public var midBlueGray: UIColor { UIColor.from(hexString: conf.midBlueGray) }
+    public var iconGrayBlue: UIColor { UIColor.from(hexString: conf.iconGrayBlue) }
+    public var rotherRed: UIColor { UIColor.from(hexString: conf.rotherRed) }
+    public var whilePressingRed: UIColor { UIColor.from(hexString: conf.whilePressingRed) }
+    public var blue: UIColor { UIColor.from(hexString: conf.blue) }
+    public var white: UIColor { UIColor.from(hexString: conf.white) }
+    public var black: UIColor { UIColor.from(hexString: conf.black) }
+    public var gold: UIColor { UIColor.from(hexString: conf.gold) }
+    public var goldOutline: UIColor { UIColor.from(hexString: conf.goldoutline) }
+    
 }
     
 public struct SettingsFontDefault: SettingsFont {
@@ -175,6 +208,7 @@ public struct SettingsFontDefault: SettingsFont {
             return UIFont(descriptor: font.fontDescriptor, size: CGFloat(size))
         }
         return UIFont.systemFont(ofSize: CGFloat(size), weight: weight)
+        
     }
 }
 
@@ -186,12 +220,3 @@ public struct SettingsMiscDefault: SettingsMisc {
     
     public var hasSeparator: Bool { conf.hasSeparator }
 }
-
-// extensions to standard classes
-/*extension SkinMargin {
-    var basic10: CGFloat { 0 }
-}
-
-extension SkinMarginDefault {
-    var basic10: CGFloat { conf.marginBase * 10 }
-}*/

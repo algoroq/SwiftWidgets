@@ -30,20 +30,36 @@ open class TextAreaWidget: Widget, WidgetInstantiable {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    
 
     open override func build() {
         mainView.addSubview(textView)
         mainView.addSubview(placeholderLabel)
+        mainView.layer.cornerRadius = 8
         
         textView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.centerY.equalTo(mainView)
+            $0.height.equalTo(20)
         }
         
+        textView.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 21).isActive = true
+        textView.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: 21).isActive = true
+        
+        backgroundColor = .systemPink
+
         placeholderLabel.snp.makeConstraints {
-            $0.left.top.right.equalToSuperview()
+            $0.top.bottom.centerY.equalTo(mainView)
         }
+        
+        placeholderLabel.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 21).isActive = true
         
         addContentView(mainView)
+        mainView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        mainView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+  
+        mainView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        mainView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
         
         textView.isEditable = true
         textView.isSelectable = true
@@ -55,18 +71,6 @@ open class TextAreaWidget: Widget, WidgetInstantiable {
     open override func load() {
         super.load()
         
-        textView.snp.updateConstraints {
-            $0.left.equalToSuperview().offset(model.innerEdgesHorizontal)
-            $0.top.equalToSuperview().offset(model.innerEdgesVertical)
-            $0.right.equalToSuperview().inset(model.innerEdgesHorizontal)
-            $0.bottom.equalToSuperview().inset(model.innerEdgesVertical)
-        }
-        
-        placeholderLabel.snp.updateConstraints {
-            $0.left.equalToSuperview().offset(model.innerEdgesHorizontal)
-            $0.top.equalToSuperview().offset(model.innerEdgesVertical)
-            $0.right.equalToSuperview().inset(model.innerEdgesHorizontal)
-        }
         
         TextAreaComponent().setup(target: textView, model: model.textInput, widgetModel: model)
         LabelComponent().setup(target: placeholderLabel, model: model.placeholder, widgetModel: model)
